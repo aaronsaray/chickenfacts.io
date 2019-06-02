@@ -1,4 +1,4 @@
 ---
 ---
 { "id": {{ page.title }}, "fact": {{ content | strip_newlines | jsonify }}, "source":
-{{ page.source | jsonify }} }
+{{ page.source | jsonify }}, "published": {{ page.date | date: "%Y-%m-%d" | jsonify }} }

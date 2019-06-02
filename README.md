@@ -18,6 +18,10 @@ The content is generated with [Jekyll](https://jekyllrb.com) and presented with 
 
 There is an API available. Check out [API.md](./API.md) for details.
 
+## Add a Fact
+
+Chicken facts are accepted via a [pull request](https://github.com/aaronsaray/chickenfacts.io/pulls) and greatly appreciated.
+
 ## What/Who?
 
 This project was created by [Aaron Saray](https://aaronsaray.com). He's not really sure why. Bored I guess.

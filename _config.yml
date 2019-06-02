@@ -5,6 +5,7 @@ exclude:
 - API.md
 - Gemfile
 - Gemfile.lock
+- netlify.toml
 
 defaults:
   -

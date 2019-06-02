@@ -20,7 +20,8 @@ You'll receive this response:
 {
   "id": 31,
   "fact": "A chicken’s heart beats from 220 to 360 times per second.",
-  "source": "https://www.thefactsite.com/chicken-facts/"
+  "source": "https://www.thefactsite.com/chicken-facts/",
+  "published": "2019-06-02"
 }
 ```
 
