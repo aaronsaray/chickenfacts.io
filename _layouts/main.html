@@ -24,7 +24,10 @@ layout: compress
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   </head>
   <body>
-    <header><h1>Chicken Facts</h1></header>
+    <header>
+      <h1><img src="/logo.png" alt="a chicken" />Chicken Facts</h1>
+      <a href="#" id="another" title="Get another chicken fact">↻ Another</a>
+    </header>
     <main>
       {{ content }}
     </main>
@@ -35,11 +38,14 @@ layout: compress
         <div>
           <p>
             Created by
-            <a href="https://aaronsaray.com" target="_blank">Aaron Saray</a>
-            with <a href="https://github.com">this source code</a>.
+            <a href="https://aaronsaray.com" target="_blank" class="link"
+              >Aaron Saray</a
+            >
+            with <a href="https://github.com" class="link">this source code</a>.
           </p>
         </div>
       </div>
+      <a href="https://github.com/api" target="_blank" class="link">API</a>
     </footer>
   </body>
 </html>
