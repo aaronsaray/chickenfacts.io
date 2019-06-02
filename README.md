@@ -1,4 +1,4 @@
-<h1 style="text-align: center"><img src="./logo.png" alt="a chicken" style="height: 2rem; vertical-align: sub"> Chicken Facts</h1>
+<h1 style="text-align: center"><img src="./logo.png" alt="a chicken" height="64"> Chicken Facts</h1>
 
 [chickenfacts.io](https://chickenfacts.io) showcases useful and informative chicken facts.
 
