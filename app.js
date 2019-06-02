@@ -5,12 +5,11 @@
   let id, requested = window.location.pathname.substr(1);
 
   if (requested) {
-    id = requested;
+    id = parseInt(requested, 32).toString(10);
   } else {
     id = Math.floor(Math.random() * max) + 1;
+    history.replaceState(null, null, id.toString(32));
   }
-
-  history.replaceState(null, null, id);
 
   function error(object) {
     alert("There was an error getting your chicken fact.  Sorry about that.");
