@@ -1,3 +1,6 @@
+---
+---
+
 body {
   background: #ffffff;
   color: #d5a544;
@@ -7,9 +10,10 @@ body {
   min-height: 100vh;
   flex-direction: column;
   margin: 0;
-}
-body > * {
-  padding: 1rem;
+
+  & > * {
+    padding: 1rem;
+  }
 }
 .link {
   font-size: 0.7rem;
@@ -22,22 +26,22 @@ h1 {
   text-align: center;
   font-size: 2rem;
   font-weight: 300;
+
+  img {
+    height: 2.5rem;
+    width: 2.5rem;
+    vertical-align: sub;
+    margin-right: 0.5rem;
+  }
 }
-h1 img {
-  height: 2.5rem;
-  width: 2.5rem;
-  vertical-align: sub;
-  margin-right: 0.5rem;
-}
+
 #another {
   position: absolute;
   top: 1rem;
   right: 1rem;
   text-decoration: none;
   color: #d2394e;
-}
-@media (min-width: 320px) and (max-width: 480px) {
-  #another {
+  @media (min-width: 320px) and (max-width: 480px) {
     position: relative;
     display: block;
     text-align: center;
@@ -51,37 +55,45 @@ main {
   text-align: center;
   align-items: center;
 }
-article q {
-  display: block;
-  margin-bottom: 1rem;
-  font-size: 5vw;
-}
-article q:before,
-article q:after {
-  display: none;
+article {
+  q {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 5vw;
+  }
+
+  q:before,
+  q:after {
+    display: none;
+  }
 }
 
 footer {
   display: flex;
   justify-content: space-between;
 }
-.collapse input {
-  display: none;
-}
-.collapse label {
-  display: block;
-  cursor: pointer;
-}
-.collapse > div {
-  max-height: 0px;
-  overflow: hidden;
+.collapse {
+  input {
+    display: none;
+  }
 
-  transition: max-height 0.25s ease-in-out;
-}
-.collapse input:checked ~ div {
-  max-height: 2rem;
-}
-.collapse p {
-  margin-bottom: 0;
-  font-size: 0.7rem;
+  label {
+    display: block;
+    cursor: pointer;
+  }
+
+  & > div {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.25s ease-in-out;
+  }
+
+  input:checked ~ div {
+    max-height: 2rem;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 0.7rem;
+  }
 }
