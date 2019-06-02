@@ -20,7 +20,7 @@ There is an API available. Check out [API.md](./API.md) for details.
 
 ## Add a Fact
 
-Chicken facts are accepted via a [pull request](https://github.com/aaronsaray/chickenfacts.io/pulls) and greatly appreciated.
+Chicken facts are accepted via a [pull request](https://github.com/aaronsaray/chickenfacts.io/pulls) and greatly appreciated. Otherwise, just add an [issue](https://github.com/aaronsaray/chickenfacts.io/issues/new/choose).
 
 ## What/Who?
 
