@@ -5,3 +5,10 @@ exclude:
 - API.md
 - Gemfile
 - Gemfile.lock
+
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      permalink: "/api/v1/facts/:title.json"
