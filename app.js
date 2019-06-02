@@ -17,6 +17,7 @@
   }
 
   function applyFact(data) {
+    document.querySelector('article').classList.remove('loading');
     document.querySelector("q").innerText = data.fact;
     document.querySelector("article a").setAttribute("href", data.source);
   }

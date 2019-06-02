@@ -27,6 +27,11 @@ h1 {
   font-size: 2rem;
   font-weight: 300;
 
+  a {
+    text-decoration: none;
+    color: #d5a544;
+  }
+
   img {
     height: 2.5rem;
     width: 2.5rem;
@@ -57,6 +62,7 @@ main {
 }
 article {
   padding: 0 1rem;
+
   q {
     display: block;
     margin-bottom: 1rem;
@@ -96,5 +102,21 @@ footer {
   p {
     margin-bottom: 0;
     font-size: 0.7rem;
+  }
+}
+
+.loading {
+  a {
+    display: none;
+  }
+  span {
+    font-size: 1rem;
+    animation: loading 1s linear infinite;
+  }
+}
+
+@keyframes loading {
+  50% {
+    opacity: 0;
   }
 }
