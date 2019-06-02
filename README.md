@@ -16,7 +16,7 @@ The content is generated with [Jekyll](https://jekyllrb.com) and presented with 
 
 ### API
 
-There is an API available. Check out [API.md](./aAPI.md) for details.
+There is an API available. Check out [API.md](./API.md) for details.
 
 ## What/Who?
 

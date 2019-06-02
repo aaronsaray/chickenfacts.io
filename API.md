@@ -26,4 +26,4 @@ You'll receive this response:
 
 ### Pagination
 
-Pagination for multiple requests is a WIP and is not complete yet.
+Pagination for multiple requests is a WIP and is not complete yet. You can follow [this issue](https://github.com/aaronsaray/chickenfacts.io/issues/1) to keep informed.
