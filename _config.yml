@@ -1,0 +1,6 @@
+title: thedevmanager.com
+
+exclude:
+- README.md
+- Gemfile
+- Gemfile.lock

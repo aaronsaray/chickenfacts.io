@@ -1,0 +1,45 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Random chicken facts (with an API)" />
+    <meta property="og:title" content="Random chicken facts" />
+    <meta
+      property="og:description"
+      content="Sometimes you need to know a bit more about chickens..."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chickenfacts.com" />
+    <meta property="og:image" content="https://chickenfacts/logo.png" />
+    <title>Chicken Facts</title>
+    <link href="/app.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  </head>
+  <body>
+    <header><h1>Chicken Facts</h1></header>
+    <main>
+      {{ content }}
+    </main>
+    <footer>
+      <div class="collapse">
+        <input id="contact" type="checkbox" />
+        <label for="contact" class="link">Contact</label>
+        <div>
+          <p>
+            Created by
+            <a href="https://aaronsaray.com" target="_blank">Aaron Saray</a>
+            with <a href="https://github.com">this source code</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

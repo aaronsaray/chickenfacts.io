@@ -1,0 +1,60 @@
+body {
+  background: #ffffff;
+  color: #222222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+body > * {
+  padding: 1rem;
+}
+.link {
+  font-size: 0.7rem;
+  color: blue;
+  text-decoration: underline;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+article q {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 5vw;
+}
+article q:before,
+article q:after {
+  display: none;
+}
+
+.collapse input {
+  display: none;
+}
+.collapse label {
+  display: block;
+  cursor: pointer;
+}
+.collapse > div {
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: max-height 0.25s ease-in-out;
+}
+.collapse input:checked ~ div {
+  max-height: 3rem;
+}
+.collapse p {
+  margin-bottom: 0;
+}
