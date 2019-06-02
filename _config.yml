@@ -12,3 +12,6 @@ defaults:
       type: "posts"
     values:
       permalink: "/api/v1/facts/:title.json"
+
+sass:
+  style: compressed
