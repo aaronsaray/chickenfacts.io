@@ -25,6 +25,21 @@ You'll receive this response:
 }
 ```
 
+### Get The Count
+
+In order to retrieve a count of the facts available, you can hit this end point:
+
+`GET /api/v1/facts.json`
+
+You'll receive a response like this:
+
+```
+{
+  "count": 36,
+  "last_counted": "2019-06-03"
+}
+```
+
 ### Pagination
 
 Pagination for multiple requests is a WIP and is not complete yet. You can follow [this issue](https://github.com/aaronsaray/chickenfacts.io/issues/1) to keep informed.

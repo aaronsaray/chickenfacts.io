@@ -1,0 +1,6 @@
+---
+---
+{
+  "count": {{ site.posts | size }},
+  "last_counted": {{ site.time | date: "%Y-%m-%d" | jsonify }}
+}
