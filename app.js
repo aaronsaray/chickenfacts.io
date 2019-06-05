@@ -6,6 +6,9 @@
 
   if (requested) {
     id = parseInt(requested, 32).toString(10);
+    if (id > max) {
+      return error(id);
+    }
   } else {
     id = Math.floor(Math.random() * max) + 1;
     history.replaceState(null, null, id.toString(32));
