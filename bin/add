@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+// really rough PHP just to solve a problem for me
+
+$files = glob('_posts/*.html');
+natsort($files);
+$oldest = array_pop($files);
+$parts = explode('-', $oldest);
+
+$id = basename($parts[3], '.html') + 1;
+$paddedId = str_pad($id, 5, '0', STR_PAD_LEFT);
+$filename = '_posts/' . date('Y-m-d') . "-{$id}.html";
+
+echo "Fact: ";
+$fact = rtrim(fgets(STDIN));
+
+echo "Source: ";
+$source = rtrim(fgets(STDIN));
+
+$fileContent = <<<EOF
+---
+layout: json
+source: $source
+sort: "$paddedId"
+---
+$fact
+
+EOF;
+
+file_put_contents($filename, $fileContent);
+
+echo "Written to $filename\n";
+

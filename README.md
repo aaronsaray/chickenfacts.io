@@ -22,6 +22,8 @@ There is an API available. Check out [API.md](./API.md) for details.
 
 Chicken facts are accepted via a [pull request](https://github.com/aaronsaray/chickenfacts.io/pulls) and greatly appreciated. Otherwise, just add an [issue](https://github.com/aaronsaray/chickenfacts.io/issues/new/choose).
 
+If you're adding a lot of facts, you might want to use the PHP script located at `bin/add`.  You should be able to run that and insert your facts. It'll create the template.
+
 ## What/Who?
 
 This project was created by [Aaron Saray](https://aaronsaray.com). He's not really sure why. Bored I guess.
