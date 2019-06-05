@@ -1,8 +1,10 @@
 ---
 layout: null
-permalink: /api/v1/facts/page
+permalink: /api/v1/facts/order/id/desc/page
 pagination:
   enabled: true
+  sort_field: "sort"
+  sort_reverse: true
 ---
 {
   "facts": [{% for post in paginator.posts %}

@@ -25,5 +25,4 @@ pagination:
   per_page: 10
   permalink: ""
   indexpage: ":num"
-  sort_field: "sort"
   extension: "json"
