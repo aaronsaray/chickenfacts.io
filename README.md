@@ -14,6 +14,8 @@ Imagery was provided by [Vecteezy](https://www.vecteezy.com).
 
 The content is generated with [Jekyll](https://jekyllrb.com) and presented with minimal html, css and javascript. No large libraries or databases are used.
 
+The original design and functionality is described in the [blog entry](https://www.aaronsaray.com/2019/spa-plus-api-no-framework-no-db).  Things may have changed since then.
+
 ### API
 
 There is an API available. Check out [API.md](./API.md) for details.
@@ -26,4 +28,4 @@ If you're adding a lot of facts, you might want to use the PHP script located at
 
 ## What/Who?
 
-This project was created by [Aaron Saray](https://aaronsaray.com). He's not really sure why. Bored I guess.
+This project was created by [Aaron Saray](https://aaronsaray.com).
