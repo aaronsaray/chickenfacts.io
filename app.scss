@@ -81,7 +81,12 @@ footer {
   font-size: 0.7rem;
 
   a {
-    padding: 0 0.3rem;
+    white-space: nowrap;
+    display: inline-block;
+    padding-top: 0.3rem;
+  }
+  a:not(:only-child) {
+    padding: 0.3rem;
   }
 }
 
