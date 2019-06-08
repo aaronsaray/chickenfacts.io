@@ -78,30 +78,10 @@ article {
 footer {
   display: flex;
   justify-content: space-between;
-}
-.collapse {
-  input {
-    display: none;
-  }
+  font-size: 0.7rem;
 
-  label {
-    display: block;
-    cursor: pointer;
-  }
-
-  & > div {
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height 0.25s ease-in-out;
-  }
-
-  input:checked ~ div {
-    max-height: 2rem;
-  }
-
-  p {
-    margin-bottom: 0;
-    font-size: 0.7rem;
+  a {
+    padding: 0 0.3rem;
   }
 }
 

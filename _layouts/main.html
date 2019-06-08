@@ -46,31 +46,18 @@ layout: compress
       {{ content }}
     </main>
     <footer>
-      <div class="collapse">
-        <input id="contact" type="checkbox" />
-        <label for="contact" class="link">Contact</label>
-        <div>
-          <p>
-            Created by
-            <a href="https://aaronsaray.com" target="_blank" class="link"
-              >Aaron Saray</a
-            >
-            with
-            <a
-              href="https://github.com/aaronsaray/chickenfacts.io"
-              class="link"
-              target="_blank"
-              >this source code</a
-            >.
-          </p>
-        </div>
+      <div>
+        <a href="https://github.com/aaronsaray/chickenfacts.io/blob/master/API.md" title="Get API Documentation" target="_blank" class="link">API</a>
+        <a href="https://www.amazon.com/dp/B07STLPSQW/ref=sr_1_3" target="_blank" title="Add Chicken Facts to your Amazon Alexa" class="link">Alexa Skill</a>
+        <a href="https://www.icloud.com/shortcuts/8ead23a264d84d338e82eebc414f9b3c" target="_blank" title="Add a Siri Shortcut to your iPhone" class="link">Siri Shortcut</a>
+        <a href="https://github.com/aaronsaray/chickenfacts.io" target="_blank" title="Chicken Facts is open source" class="link">Github</a>
       </div>
-      <a
-        href="https://github.com/aaronsaray/chickenfacts.io/blob/master/API.md"
-        target="_blank"
-        class="link"
-        >API</a
-      >
+      <div>
+        &copy; {{ site.time | date: '%Y' }} 
+        <a href="https://aaronsaray.com" target="_blank" class="link">
+          Aaron Saray
+        </a>
+      </div>
     </footer>
     <script src="/app.js"></script>
   </body>
