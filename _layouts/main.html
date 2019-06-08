@@ -50,6 +50,25 @@ layout: compress
         <a href="https://github.com/aaronsaray/chickenfacts.io/blob/master/API.md" title="Get API Documentation" target="_blank" class="link">API</a>
         <a href="https://www.amazon.com/dp/B07STLPSQW/ref=sr_1_3" target="_blank" title="Add Chicken Facts to your Amazon Alexa" class="link">Alexa Skill</a>
         <a href="https://www.icloud.com/shortcuts/8ead23a264d84d338e82eebc414f9b3c" target="_blank" title="Add a Siri Shortcut to your iPhone" class="link">Siri Shortcut</a>
+        <a class="link" href="javascript:(function(){
+          fetch('https://chickenfacts.io/api/v1/facts.json')
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(json) {
+              return json.count;
+            })
+            .then(function(count) {
+              let id = Math.floor(Math.random() * count) + 1;
+              fetch('https://chickenfacts.io/api/v1/facts/' + id + '.json')
+                .then(function(response) {
+                  return response.json();
+                })
+                .then(function(json) {
+                  alert(json.fact);
+                });
+            });
+        })()" title="Drag to your bookmark bar or right click and favorite">Chicken Fact Bookmarklet</a>
         <a href="https://github.com/aaronsaray/chickenfacts.io" target="_blank" title="Chicken Facts is open source" class="link">Github</a>
       </div>
       <div>

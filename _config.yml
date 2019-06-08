@@ -6,6 +6,7 @@ exclude:
 - Gemfile
 - Gemfile.lock
 - netlify.toml
+- LICENSE
 
 defaults:
   -
