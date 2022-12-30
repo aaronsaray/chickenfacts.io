@@ -4,43 +4,46 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Random chicken facts (with an API)" />
-    <meta property="og:title" content="Chicken Facts" />
-    <meta
-      property="og:description"
-      content="Your #1 source for random chicken facts."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://chickenfacts.com" />
-    <meta property="og:image" content="https://chickenfacts/logo.png" />
-    <title>Chicken Facts</title>
-    <link href="/app.css" rel="stylesheet" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <script src="https://sunny-virtuous.chickenfacts.io/script.js" data-site="EREFTDYG" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1>
-        <a href="/"><img src="/logo.png" alt="a chicken" />Chicken Facts</a>
-      </h1>
-      <a href="/" id="another" title="Get another chicken fact">↻ Another</a>
-    </header>
-    <main>
-      {{ content }}
-    </main>
-    <footer>
-      <div>
-        <a href="https://github.com/aaronsaray/chickenfacts.io/blob/master/API.md" title="Get API Documentation" target="_blank" class="link">API</a>
-        <a href="https://www.amazon.com/dp/B07STLPSQW/ref=sr_1_3" target="_blank" title="Add Chicken Facts to your Amazon Alexa" class="link">Alexa Skill</a>
-        <a href="https://www.icloud.com/shortcuts/8ead23a264d84d338e82eebc414f9b3c" target="_blank" title="Add a Siri Shortcut to your iPhone" class="link">Siri Shortcut</a>
-        <a href="http://www.packal.org/workflow/chicken-facts" target="_blank" title="An Alfred Workflow" class="link">Alfred Workflow</a>
-        <a class="link" href="javascript:(function(){
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Random chicken facts (with an API)" />
+  <meta property="og:title" content="Chicken Facts" />
+  <meta property="og:description" content="Your #1 source for random chicken facts." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chickenfacts.com" />
+  <meta property="og:image" content="https://chickenfacts/logo.png" />
+  <title>Chicken Facts</title>
+  <link href="/app.css" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <script src="https://sunny-virtuous.chickenfacts.io/script.js" data-site="EREFTDYG" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="/"><img src="/logo.png" alt="a chicken" />Chicken Facts</a>
+    </h1>
+    <a href="/" id="another" title="Get another chicken fact">↻ Another</a>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <div>
+      <a href="https://github.com/aaronsaray/chickenfacts.io/blob/master/API.md" title="Get API Documentation"
+        target="_blank" class="link">API</a>
+      <a href="https://www.amazon.com/dp/B07STLPSQW/ref=sr_1_3" target="_blank"
+        title="Add Chicken Facts to your Amazon Alexa" class="link">Alexa Skill</a>
+      <a href="https://www.icloud.com/shortcuts/8ead23a264d84d338e82eebc414f9b3c" target="_blank"
+        title="Add a Siri Shortcut to your iPhone" class="link">Siri Shortcut</a>
+      <a href="http://www.packal.org/workflow/chicken-facts" target="_blank" title="An Alfred Workflow"
+        class="link">Alfred Workflow</a>
+      <a class="link" href="javascript:(function(){
           fetch('https://chickenfacts.io/api/v1/facts.json')
             .then(function(response) {
               return response.json();
@@ -59,15 +62,17 @@ layout: compress
                 });
             });
         })()" title="Drag to your bookmark bar or right click and favorite">Chicken Fact Bookmarklet</a>
-        <a href="https://github.com/aaronsaray/chickenfacts.io" target="_blank" title="Chicken Facts is open source" class="link">Github</a>
-      </div>
-      <div>
-        &copy; {{ site.time | date: '%Y' }} 
-        <a href="https://aaronsaray.com" target="_blank" class="link" title="I made this">
-          Aaron Saray
-        </a>
-      </div>
-    </footer>
-    <script src="/app.js"></script>
-  </body>
+      <a href="https://github.com/aaronsaray/chickenfacts.io" target="_blank" title="Chicken Facts is open source"
+        class="link">Github</a>
+    </div>
+    <div>
+      &copy; 2019-{{ site.time | date: '%Y' }}
+      <a href="https://aaronsaray.com" target="_blank" class="link" title="I made this">
+        Aaron Saray
+      </a>
+    </div>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+
 </html>
