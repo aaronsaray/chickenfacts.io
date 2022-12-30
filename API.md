@@ -2,6 +2,8 @@
 
 Chicken facts provides a JSON API with limited functionality.
 
+The **Open API Spec** can be found at [https://chickenfacts.io/api/open-api.yaml](https://chickenfacts.io/api/open-api.yaml).
+
 ## Version 1 API
 
 The API serves a chicken fact in JSON format.
