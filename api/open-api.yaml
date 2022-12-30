@@ -1,190 +1,193 @@
 openapi: 3.0.0
-x-stoplight:
-  id: rp1ct29qbtsuj
 info:
   title: Chicken Facts
   version: '1.0'
+  description: '[chickenfacts.io](https://chickenfacts.io) showcases useful and informative chicken facts.'
+  contact:
+    name: Aaron Saray
+    url: 'https://chickenfacts.io'
+    email: aaron@aaronsaray.com
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'https://chickenfacts.io/api/v1'
+    description: Production
 paths:
-  '/users/{userId}':
+  /facts.json:
+    get:
+      summary: Get Facts Metadata
+      tags:
+        - facts
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                    minimum: 1
+                    example: 36
+                    description: The total count of facts.
+                  last_counted:
+                    type: string
+                    format: date
+                    example: '2019-06-03'
+                    description: The last time this count was updated.
+                required:
+                  - count
+                  - last_counted
+              examples:
+                Example response:
+                  value:
+                    count: 36
+                    last_counted: '2019-06-03'
+      operationId: get-facts.json
+      description: |-
+        In order to retrieve a count of the facts available and last updated, you can hit this end point.
+
+        Facts start at ID `1`, and never have a gap. So, you could use `1 - {count}` as a range for a random number generator to pick an individual fact.
+  '/facts/{id}.json':
     parameters:
       - schema:
           type: integer
-        name: userId
+          format: int64
+          example: 12
+          minimum: 1
+        name: id
         in: path
         required: true
-        description: Id of an existing user.
+        description: The fact ID
     get:
-      summary: Get User Info by User ID
-      tags: []
+      summary: Retrieve specific fact
+      tags:
+        - facts
       responses:
         '200':
-          description: User Found
+          description: ''
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/Fact'
               examples:
-                Get User Alice Smith:
-                  value:
-                    id: 142
-                    firstName: Alice
-                    lastName: Smith
-                    email: alice.smith@gmail.com
-                    dateOfBirth: '1997-10-31'
-                    emailVerified: true
-                    signUpDate: '2019-08-24'
-        '404':
-          description: User Not Found
-      operationId: get-users-userId
-      description: Retrieve the information of the user with the matching user ID.
-    patch:
-      summary: Update User Information
-      operationId: patch-users-userId
-      responses:
-        '200':
-          description: User Updated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-              examples:
-                Updated User Rebecca Baker:
-                  value:
-                    id: 13
-                    firstName: Rebecca
-                    lastName: Baker
-                    email: rebecca@gmail.com
-                    dateOfBirth: '1985-10-02'
-                    emailVerified: false
-                    createDate: '2019-08-24'
-        '404':
-          description: User Not Found
-        '409':
-          description: Email Already Taken
-      description: Update the information of an existing user.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                lastName:
-                  type: string
-                email:
-                  type: string
-                  description: 'If a new email is given, the user''s email verified property will be set to false.'
-                dateOfBirth:
-                  type: string
-            examples:
-              Update First Name:
-                value:
-                  firstName: Rebecca
-              Update Email:
-                value:
-                  email: rebecca@gmail.com
-              Update Last Name & Date of Birth:
-                value:
-                  lastName: Baker
-                  dateOfBirth: '1985-10-02'
-        description: Patch user properties to update.
-  /user:
-    post:
-      summary: Create New User
-      operationId: post-user
-      responses:
-        '200':
-          description: User Created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-              examples:
-                New User Bob Fellow:
+                Example for ID 12:
                   value:
                     id: 12
-                    firstName: Bob
-                    lastName: Fellow
-                    email: bob.fellow@gmail.com
-                    dateOfBirth: '1996-08-24'
-                    emailVerified: false
-                    createDate: '2020-11-18'
-        '400':
-          description: Missing Required Information
-        '409':
-          description: Email Already Taken
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                lastName:
-                  type: string
-                email:
-                  type: string
-                dateOfBirth:
-                  type: string
-                  format: date
-              required:
-                - firstName
-                - lastName
-                - email
-                - dateOfBirth
-            examples:
-              Create User Bob Fellow:
-                value:
-                  firstName: Bob
-                  lastName: Fellow
-                  email: bob.fellow@gmail.com
-                  dateOfBirth: '1996-08-24'
-        description: Post the necessary fields for the API to create a new user.
-      description: Create a new user.
+                    fact: A hen has to eat about four pounds of feed to make one dozen eggs.
+                    source: 'https://www.thefactsite.com/chicken-facts/'
+                    published: '2019-06-02'
+      operationId: get-facts-id-.json
+      description: 'To retrieve a specific fact, you need to know the `ID` of the fact.  Then, use this end point to retrieve the details.'
+  '/facts/order/{sort-by}/{sort-dir}/page/{page}.json':
+    parameters:
+      - schema:
+          type: string
+          enum:
+            - id
+          example: id
+        name: sort-by
+        in: path
+        required: true
+        description: Column to sort by
+      - schema:
+          type: string
+          enum:
+            - asc
+            - desc
+          example: asc
+        name: sort-dir
+        in: path
+        required: true
+        description: Direction to sort by
+      - schema:
+          type: integer
+          format: int64
+          example: 1
+          minimum: 1
+        name: page
+        in: path
+        required: true
+        description: Page number of results
+    get:
+      summary: List of facts
+      tags:
+        - facts
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  facts:
+                    type: array
+                    minItems: 1
+                    uniqueItems: true
+                    items:
+                      $ref: '#/components/schemas/Fact'
+                  next:
+                    type: string
+                    example: /api/v1/facts/order/id/asc/page/3.json
+                    description: The URI of the next result set. (Will not contain the domain name)
+                    format: uri-reference
+                    nullable: true
+                  prev:
+                    type: string
+                    example: /api/v1/facts/order/id/asc/page/1.json
+                    description: The URI of the previous result set. (Will not contain the domain name)
+                    format: uri-reference
+                    nullable: true
+                required:
+                  - facts
+                  - next
+                  - prev
+              examples:
+                'Example of Page 2 (with a single fact, normally 10)':
+                  value:
+                    facts:
+                      - id: 12
+                        fact: A hen has to eat about four pounds of feed to make one dozen eggs.
+                        source: 'https://www.thefactsite.com/chicken-facts/'
+                        published: '2019-06-02'
+                    next: /api/v1/facts/order/id/asc/page/3.json
+                    prev: /api/v1/facts/order/id/asc/page/1.json
+      operationId: get-facts-order-sort-by-sort-dir-page-page-.json
+      description: 'This list of facts end point implements required pagination.  You should always start at page 1, and it will page for as long as the `next` url is non-null.  There is a limited amount of ordering/sorting at this time.  There are always up to 10 results per page.'
 components:
   schemas:
-    User:
-      title: User
+    Fact:
+      title: Fact
+      x-stoplight:
+        id: qk400ttr6w7ns
       type: object
-      description: ''
-      x-examples:
-        Alice Smith:
-          id: 142
-          firstName: Alice
-          lastName: Smith
-          email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
+      description: The fact model
       properties:
         id:
           type: integer
-          description: Unique identifier for the given user.
-        firstName:
+          format: int64
+          example: 12
+          minimum: 1
+        fact:
           type: string
-        lastName:
+          example: A hen has to eat about four pounds of feed to make one dozen eggs.
+          minLength: 1
+          maxLength: 65535
+        source:
           type: string
-        email:
-          type: string
-          format: email
-        dateOfBirth:
+          format: uri
+          example: 'https://www.thefactsite.com/chicken-facts/'
+          minLength: 1
+          description: The source website of the chicken fact.
+        published:
           type: string
           format: date
-          example: '1997-10-31'
-        emailVerified:
-          type: boolean
-          description: Set to true if the user's email has been verified.
-        createDate:
-          type: string
-          format: date
-          description: The date that the user was created.
+          example: '2019-06-02'
+          description: 'The date this fact was retrieved, verified and published.'
       required:
         - id
-        - firstName
-        - lastName
-        - email
-        - emailVerified
+        - fact
+        - source
+        - published
+tags:
+  - name: facts
