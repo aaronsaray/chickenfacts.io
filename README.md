@@ -1,10 +1,13 @@
 <h1 align="center"><img src="./logo.png" alt="a chicken" height="25"> Chicken Facts</h1>
 
-[chickenfacts.io](https://chickenfacts.io) showcases useful and informative chicken facts.
+> [!NOTE]
+> This project is archived. It was built as the companion project for [this blog entry](https://aaronsaray.com/2019/spa-plus-api-no-framework-no-db/).
+
+chickenfacts.io showcases useful and informative chicken facts.
 
 ## Functionality
 
-If you visit [chickenfacts.io](https://chickenfacts.io), you'll get a new, random chicken fact. Click `another` to get a new one, or copy the URL to share with friends.
+If you visit chickenfacts.io, you'll get a new, random chicken fact. Click `another` to get a new one, or copy the URL to share with friends.
 
 ## Technical
 
@@ -22,7 +25,7 @@ There is an API available. Check out [API.md](./API.md) for details.
 
 ## Add a Fact
 
-Chicken facts are accepted via a [pull request](https://github.com/aaronsaray/chickenfacts.io/pulls) and greatly appreciated. Otherwise, just add an [issue](https://github.com/aaronsaray/chickenfacts.io/issues/new/choose).
+Chicken facts are accepted via a ~~pull request~~ and greatly appreciated. Otherwise, just add an ~~issue~~.
 
 If you're adding a lot of facts, you might want to use the PHP script located at `bin/add`.  You should be able to run that and insert your facts. It'll create the template.
 
